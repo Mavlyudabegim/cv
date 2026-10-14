@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import { profile } from '../data/cv';
+
+interface Props {
+  title?: string;
+  description?: string;
+  home?: boolean;
+}
+
+const {
+  title = `${profile.name} — AI, Automation & Data`,
+  description = `${profile.name} — M.Sc. Computer Science (Machine Learning) at Saarland University, DAAD scholar, former Software Engineer at Exadel. Open to working student roles in AI, automation and data.`,
+  home = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <script is:inline>document.documentElement.classList.remove('no-js');</script>
+  </head>
+  <body>
+    <Nav home={home} />
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="wrap">© {new Date().getFullYear()} {profile.name} · {profile.location}</div>
+    </footer>
+
+    <script>
+      // Fade sections in as they scroll into view (adds the `in` class).
+      const show = (el: Element) => el.classList.add('in');
+      const items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((e) => {
+            if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
+          }),
+          { threshold: 0.12 },
+        );
+        items.forEach((el) => io.observe(el));
+      } else {
+        items.forEach(show);
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: .88rem; }
+</style>

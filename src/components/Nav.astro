@@ -1,0 +1,38 @@
+---
+import { profile } from '../data/cv';
+
+interface Props { home?: boolean }
+const { home = false } = Astro.props;
+
+// On sub-pages, section links point back to the home page.
+const base = home ? '' : '/';
+const links = [
+  ['About', 'about'],
+  ['Experience', 'experience'],
+  ['Education', 'education'],
+  ['Skills', 'skills'],
+  ['Projects', 'projects'],
+  ['Contact', 'contact'],
+];
+---
+<nav>
+  <div class="wrap">
+    <a href={home ? '#top' : '/'} class="logo grad-text">{profile.shortName}</a>
+    <ul>
+      {links.map(([label, id]) => <li><a href={`${base}#${id}`}>{label}</a></li>)}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--line);
+  }
+  .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+  .logo { font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+  ul { display: flex; gap: 22px; list-style: none; }
+  ul a { text-decoration: none; color: var(--muted); font-size: .92rem; font-weight: 500; transition: color .2s; }
+  ul a:hover { color: var(--violet); }
+  @media (max-width: 720px) { ul { display: none; } }
+</style>

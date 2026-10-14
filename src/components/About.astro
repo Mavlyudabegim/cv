@@ -1,0 +1,30 @@
+---
+import { about, stats } from '../data/cv';
+---
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About me</div>
+    <h2 class="reveal">{about.heading}</h2>
+    <div class="about">
+      <div class="card text reveal">
+        {about.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="stats reveal">
+        {stats.map((s) => (
+          <div class={`stat bg-${s.color}`}><b>{s.value}</b><small>{s.label}</small></div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; }
+  .text p { color: var(--muted); font-size: 1.05rem; }
+  .text p + p { margin-top: 14px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .stat { border-radius: 16px; padding: 20px; color: #fff; }
+  .stat b { display: block; font-size: 2rem; line-height: 1.1; font-weight: 800; }
+  .stat small { font-size: .85rem; opacity: .92; }
+  @media (max-width: 820px) { .about { grid-template-columns: 1fr; } }
+</style>

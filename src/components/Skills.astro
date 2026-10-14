@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+import { skills } from '../data/cv';
+---
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills</div>
+    <h2 class="reveal">What I work with</h2>
+    <div class="grid">
+      {skills.map((s) => (
+        <div class="card reveal">
+          <h3><span class={`ico bg-${s.color}`}><Icon name={s.icon} /></span>{s.group}</h3>
+          <div class="tags">{s.items.map((t) => <span class="tag">{t}</span>)}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+  h3 { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; margin-bottom: 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag { font-size: .85rem; padding: 5px 11px; border-radius: 8px; background: var(--bg); border: 1px solid var(--line); }
+</style>

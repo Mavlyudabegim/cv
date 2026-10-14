@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+import { profile, contact } from '../data/cv';
+---
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>{contact.heading}</h2>
+      <p>{contact.text}</p>
+      <div class="btns">
+        <a class="btn solid" href={`mailto:${profile.email}`}><Icon name="mail" />Email me</a>
+        <a class="btn outline" href={profile.linkedin} target="_blank" rel="noopener"><Icon name="linkedin" />LinkedIn</a>
+        <a class="btn outline" href={profile.github} target="_blank" rel="noopener"><Icon name="github" />GitHub</a>
+        <a class="btn outline" href={profile.cvFile} download><Icon name="download" />CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact { background: var(--grad); border-radius: 26px; padding: 50px 30px; text-align: center; color: #fff; }
+  .eyebrow { color: #fff; opacity: .85; }
+  h2 { margin: 6px 0 12px; color: #fff; }
+  p { opacity: .92; max-width: 560px; margin: 0 auto 26px; }
+  .btns { justify-content: center; }
+  .solid { background: #fff; color: #7c3aed; }
+  .outline { color: #fff; border: 2px solid rgba(255, 255, 255, .75); }
+</style>

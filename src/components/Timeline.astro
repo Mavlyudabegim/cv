@@ -1,0 +1,43 @@
+---
+import type { TimelineItem } from '../data/cv';
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  heading: string;
+  items: TimelineItem[];
+}
+const { id, eyebrow, heading, items } = Astro.props;
+---
+<section id={id}>
+  <div class="wrap">
+    <div class="eyebrow reveal">{eyebrow}</div>
+    <h2 class="reveal">{heading}</h2>
+    <div class="timeline">
+      {items.map((item) => (
+        <div class="item card reveal">
+          <div class="head">
+            <div><h3>{item.title}</h3><div class="org">{item.org}</div></div>
+            <div class="when">{item.period}</div>
+          </div>
+          <ul>{item.points.map((p) => <li set:html={p} />)}</ul>
+          {item.tags && <div class="pill-row">{item.tags.map((t) => <span class="pill">{t}</span>)}</div>}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: var(--grad); }
+  .item { position: relative; margin-bottom: 24px; }
+  .item::before { content: ""; position: absolute; left: -29px; top: 30px; width: 15px; height: 15px; border-radius: 50%; background: var(--surface); border: 3px solid var(--violet); }
+  .head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 6px; }
+  h3 { font-size: 1.15rem; font-weight: 700; }
+  .org { color: var(--violet); font-weight: 600; }
+  .when { font-size: .88rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
+  ul { margin: 12px 0 0 18px; color: var(--muted); }
+  li { margin-bottom: 6px; }
+  li :global(strong) { color: var(--text); }
+</style>

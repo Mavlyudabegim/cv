@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Timeline from '../components/Timeline.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Languages from '../components/Languages.astro';
+import Contact from '../components/Contact.astro';
+import { experience, education } from '../data/cv';
+---
+<Base home>
+  <Hero />
+  <About />
+  <Timeline id="experience" eyebrow="Experience" heading="Professional experience" items={experience} />
+  <Timeline id="education" eyebrow="Education" heading="Academic background" items={education} />
+  <Skills />
+  <Projects />
+  <Languages />
+  <Contact />
+</Base>

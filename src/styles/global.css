@@ -1,0 +1,71 @@
+:root {
+  --bg: #f7f7fb; --surface: #ffffff; --text: #1d1b2e; --muted: #5d5a72; --line: #e6e4f0;
+  --violet: #7c3aed; --pink: #ec4899; --teal: #0d9488; --amber: #d97706; --blue: #2563eb;
+  --grad: linear-gradient(120deg, #7c3aed 0%, #c026d3 45%, #ec4899 100%);
+  --shadow: 0 10px 30px -12px rgba(76, 29, 149, .25);
+  --radius: 18px;
+
+  --g-violet: linear-gradient(135deg, #7c3aed, #a855f7);
+  --g-pink: linear-gradient(135deg, #db2777, #f472b6);
+  --g-teal: linear-gradient(135deg, #0d9488, #2dd4bf);
+  --g-amber: linear-gradient(135deg, #ea580c, #fbbf24);
+  --g-blue: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0d1a; --surface: #1a1729; --text: #f1effa; --muted: #a8a4c0; --line: #2c2842;
+    --violet: #a78bfa; --pink: #f472b6; --teal: #2dd4bf; --amber: #fbbf24; --blue: #60a5fa;
+    --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+section { padding: 70px 0; }
+.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pink); }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); font-weight: 800; letter-spacing: -.01em; margin: 6px 0 28px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+.grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 12px;
+  font-weight: 600; text-decoration: none; font-size: .95rem; transition: transform .2s, box-shadow .2s;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn.primary { background: var(--grad); color: #fff; box-shadow: 0 10px 24px -8px rgba(192, 38, 211, .55); }
+.btn.ghost { background: var(--surface); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-2px); }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.pill { font-size: .8rem; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: color-mix(in srgb, var(--violet) 12%, transparent); color: var(--violet); }
+
+.ico { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; color: #fff; flex-shrink: 0; }
+.ico svg { width: 19px; height: 19px; }
+.bg-violet { background: var(--g-violet); }
+.bg-pink { background: var(--g-pink); }
+.bg-teal { background: var(--g-teal); }
+.bg-amber { background: var(--g-amber); }
+.bg-blue { background: var(--g-blue); }
+
+/* Reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; }
+}
+@media print {
+  nav, .btns { display: none; }
+  .reveal { opacity: 1; transform: none; }
+}
