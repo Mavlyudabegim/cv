@@ -6,7 +6,7 @@ color: pink
 metric: "92%"
 metricLabel: win / draw rate
 tags: [Python, Reinforcement Learning]
-# repo: https://github.com/Mavlyudabegim/your-repo-name
+repo: https://github.com/Mavlyudabegim/Tic-Tac-Toe-with-Reinforcement-Learning
 ---
 
 ## Overview

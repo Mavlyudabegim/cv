@@ -6,7 +6,7 @@ color: violet
 metric: "95%"
 metricLabel: mean IoU
 tags: [Python, PyTorch]
-# repo: https://github.com/Mavlyudabegim/your-repo-name
+repo: https://github.com/Mavlyudabegim/scribble-segmentation
 ---
 
 ## Overview
