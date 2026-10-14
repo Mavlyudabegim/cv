@@ -1,4 +1,5 @@
 ---
+import { url } from '../../utils/url';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
@@ -15,7 +16,7 @@ const d = project.data;
 ---
 <Base title={`${d.title} — ${profile.name}`} description={d.summary}>
   <article class={`wrap accent-${d.color}`}>
-    <a class="back" href="/#projects"><Icon name="back" />All projects</a>
+    <a class="back" href={url('/#projects')}><Icon name="back" />All projects</a>
     <header class="card">
       <div class="big">
         {d.metric ?? d.label}

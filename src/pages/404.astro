@@ -1,11 +1,12 @@
 ---
+import { url } from '../utils/url';
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Page not found">
   <section class="wrap nf">
     <div class="big grad-text">404</div>
     <h2>This page doesn't exist</h2>
-    <a class="btn primary" href="/">Back to home</a>
+    <a class="btn primary" href={url('/')}>Back to home</a>
   </section>
 </Base>
 

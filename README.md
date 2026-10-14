@@ -1,6 +1,6 @@
-# mavlyudabegim.com
+# CV website
 
-Personal CV / portfolio website of Mavlyudabegim Mekhrilloeva, built with [Astro](https://astro.build) and hosted on GitHub Pages.
+Personal CV / portfolio website of Mavlyudabegim Mekhrilloeva, built with [Astro](https://astro.build) and hosted on GitHub Pages at **https://mavlyudabegim.github.io/cv/**.
 
 ## Edit the content
 
@@ -20,14 +20,14 @@ Requires Node.js 22.12 or newer.
 
 ```sh
 npm install
-npm run dev       # http://localhost:4321
+npm run dev       # http://localhost:4321/cv/
 npm run build     # production build in ./dist
 ```
 
 ## Project structure
 
 ```
-public/            static files copied as-is (CNAME, favicon, CV PDF)
+public/            static files copied as-is (favicon, CV PDF)
 src/
   components/      Hero, About, Timeline, Skills, Projects, Languages, Contact, Nav, Icon
   content/projects/  one Markdown file per project
@@ -39,5 +39,6 @@ src/
 
 ## Hosting
 
-- GitHub repo → Settings → Pages → Source: **GitHub Actions**, Custom domain: `mavlyudabegim.com`
-- IONOS DNS: four `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `CNAME` `www` → `mavlyudabegim.github.io`
+- Repo → Settings → Pages → Source: **GitHub Actions** (no custom domain).
+- The site lives under the `/cv` path, set by `base` in `astro.config.mjs`. Use the `url()` helper from `src/utils/url.ts` for internal links so they include it.
+- To use a custom domain later: set `site` to the domain, remove `base`, add `public/CNAME` with the domain, and set it under Settings → Pages.

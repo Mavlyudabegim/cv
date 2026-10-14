@@ -1,11 +1,12 @@
 ---
+import { url } from '../utils/url';
 import { profile } from '../data/cv';
 
 interface Props { home?: boolean }
 const { home = false } = Astro.props;
 
 // On sub-pages, section links point back to the home page.
-const base = home ? '' : '/';
+const base = home ? '' : url('/');
 const links = [
   ['About', 'about'],
   ['Experience', 'experience'],
@@ -17,7 +18,7 @@ const links = [
 ---
 <nav>
   <div class="wrap">
-    <a href={home ? '#top' : '/'} class="logo grad-text">{profile.shortName}</a>
+    <a href={home ? '#top' : url('/')} class="logo grad-text">{profile.shortName}</a>
     <ul>
       {links.map(([label, id]) => <li><a href={`${base}#${id}`}>{label}</a></li>)}
     </ul>

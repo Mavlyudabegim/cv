@@ -1,3 +1,5 @@
+import { url } from '../utils/url';
+
 // All CV content lives here. Edit this file to update the website.
 // Projects are separate Markdown files in src/content/projects/.
 
@@ -14,7 +16,7 @@ export const profile = {
   email: 'mekhrullaeva@gmail.com',
   linkedin: 'https://www.linkedin.com/in/mavlyudabegimmekhrilloeva-4246ba1b1/',
   github: 'https://github.com/Mavlyudabegim',
-  cvFile: '/Mavlyudabegim_Mekhrilloeva_CV.pdf',
+  cvFile: url('/Mavlyudabegim_Mekhrilloeva_CV.pdf'),
 };
 
 export const about = {
