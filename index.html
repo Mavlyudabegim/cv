@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mavlyudabegim Mekhrilloeva — AI, Automation & Data</title>
+<meta name="description" content="Mavlyudabegim Mekhrilloeva — M.Sc. Computer Science (Machine Learning) at Saarland University, DAAD scholar, former Software Engineer at Exadel. Open to working student roles in AI, automation and data.">
+<meta property="og:title" content="Mavlyudabegim Mekhrilloeva — AI, Automation & Data">
+<meta property="og:description" content="M.Sc. Computer Science (ML) · Saarland University · DAAD scholar · 2 years as a software engineer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mavlyudabegim.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f7f7fb; --surface:#ffffff; --text:#1d1b2e; --muted:#5d5a72; --line:#e6e4f0;
+    --violet:#7c3aed; --pink:#ec4899; --teal:#0d9488; --amber:#d97706; --blue:#2563eb;
+    --grad:linear-gradient(120deg,#7c3aed 0%,#c026d3 45%,#ec4899 100%);
+    --shadow:0 10px 30px -12px rgba(76,29,149,.25);
+    --radius:18px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f0d1a; --surface:#1a1729; --text:#f1effa; --muted:#a8a4c0; --line:#2c2842;
+      --violet:#a78bfa; --pink:#f472b6; --teal:#2dd4bf; --amber:#fbbf24; --blue:#60a5fa;
+      --shadow:0 10px 30px -12px rgba(0,0,0,.6);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+  .logo{font-weight:800;font-size:1.1rem;text-decoration:none;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s}
+  nav ul a:hover{color:var(--violet)}
+  @media (max-width:720px){nav ul{display:none}}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:90px 0 80px}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;z-index:0;animation:float 14s ease-in-out infinite}
+  .b1{width:380px;height:380px;background:#7c3aed;top:-120px;left:-80px}
+  .b2{width:320px;height:320px;background:#ec4899;top:40px;right:-90px;animation-delay:-5s}
+  .b3{width:260px;height:260px;background:#14b8a6;bottom:-140px;left:40%;animation-delay:-9s}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-25px)}}
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.85rem;font-weight:600;box-shadow:var(--shadow)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+  h1{font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin:22px 0 14px}
+  h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--muted);max-width:680px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 30px;color:var(--muted);font-size:.95rem}
+  .meta span{display:inline-flex;align-items:center;gap:7px}
+  .meta svg{width:17px;height:17px;flex-shrink:0}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .2s,box-shadow .2s}
+  .btn svg{width:18px;height:18px}
+  .btn.primary{background:var(--grad);color:#fff;box-shadow:0 10px 24px -8px rgba(192,38,211,.55)}
+  .btn.ghost{background:var(--surface);border:1px solid var(--line)}
+  .btn:hover{transform:translateY(-2px)}
+
+  /* Sections */
+  section{padding:70px 0}
+  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+  h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:800;letter-spacing:-.01em;margin:6px 0 28px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+
+  /* About + stats */
+  .about{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
+  .about p{color:var(--muted);font-size:1.05rem}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .stat{border-radius:16px;padding:20px;color:#fff}
+  .stat b{display:block;font-size:2rem;line-height:1.1;font-weight:800}
+  .stat small{font-size:.85rem;opacity:.92}
+  .s1{background:linear-gradient(135deg,#7c3aed,#a855f7)}
+  .s2{background:linear-gradient(135deg,#db2777,#f472b6)}
+  .s3{background:linear-gradient(135deg,#0d9488,#2dd4bf)}
+  .s4{background:linear-gradient(135deg,#ea580c,#fbbf24)}
+  @media (max-width:820px){.about{grid-template-columns:1fr}}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:30px}
+  .timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--grad)}
+  .item{position:relative;margin-bottom:24px}
+  .item::before{content:"";position:absolute;left:-29px;top:30px;width:15px;height:15px;border-radius:50%;background:var(--surface);border:3px solid var(--violet)}
+  .item-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-bottom:6px}
+  .item h3{font-size:1.15rem;font-weight:700}
+  .org{color:var(--violet);font-weight:600}
+  .when{font-size:.88rem;color:var(--muted);font-weight:500;white-space:nowrap}
+  .item ul{margin:12px 0 0 18px;color:var(--muted)}
+  .item li{margin-bottom:6px}
+  .item li strong{color:var(--text)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .pill{font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;background:color-mix(in srgb,var(--violet) 12%,transparent);color:var(--violet)}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+  .skill h3{display:flex;align-items:center;gap:10px;font-size:1.05rem;margin-bottom:14px}
+  .ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#fff;flex-shrink:0}
+  .ico svg{width:19px;height:19px}
+  .tags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag{font-size:.85rem;padding:5px 11px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+
+  /* Projects */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .project{position:relative;overflow:hidden;transition:transform .25s}
+  .project:hover{transform:translateY(-4px)}
+  .project::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--accent)}
+  .project .big{font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1}
+  .project .big small{font-size:.85rem;font-weight:600;color:var(--muted);margin-left:6px}
+  .project h3{margin:14px 0 8px;font-size:1.1rem}
+  .project p{color:var(--muted);font-size:.95rem}
+
+  /* Languages */
+  .langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .lang b{display:flex;justify-content:space-between;margin-bottom:10px}
+  .lang b span{color:var(--muted);font-weight:600;font-size:.88rem}
+  .bar{height:9px;border-radius:9px;background:var(--line);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:9px;background:var(--grad);width:0;transition:width 1.2s ease}
+
+  .award{display:flex;align-items:center;gap:18px;margin-top:18px}
+  .award .ico{width:52px;height:52px;border-radius:14px}
+  .award .ico svg{width:26px;height:26px}
+
+  /* Contact */
+  .contact{background:var(--grad);border-radius:26px;padding:50px 30px;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .contact h2{margin:6px 0 12px;color:#fff}
+  .contact p{opacity:.92;max-width:560px;margin:0 auto 26px}
+  .contact .btn{background:#fff;color:#7c3aed}
+  .contact .btn.outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.75)}
+  .contact .btns{justify-content:center}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .blob{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .bar i{transition:none}
+  }
+  @media print{nav,.blob,.btns{display:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Mavlyudabegim M.</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span> Available immediately · up to 20 h/week</div>
+    <h1>Hi, I'm <span>Mavlyudabegim Mekhrilloeva</span></h1>
+    <p class="tagline">Machine Learning student at Saarland University and former software engineer. I use AI, automation and data to solve real business problems.</p>
+    <div class="meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Saarbrücken, Germany</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>M.Sc. Computer Science · DAAD scholar</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/><circle cx="12" cy="12" r="9"/></svg>Open to relocation</span>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="Mavlyudabegim_Mekhrilloeva_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download CV</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About me</div>
+    <h2 class="reveal">From building reporting tools to machine learning</h2>
+    <div class="about">
+      <div class="card reveal">
+        <p>I'm an M.Sc. Computer Science student focusing on Machine Learning at Saarland University, and a DAAD scholar. Before that, I spent 2 years as a software engineer building reporting tools for insurance companies and financial institutions.</p>
+        <p style="margin-top:14px">I'm good at turning business requirements into working technical solutions and at explaining technical ideas to non-technical stakeholders. I want to keep applying AI and automation to real business problems.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat s1"><b>2 yrs</b><small>Software engineering experience</small></div>
+        <div class="stat s2"><b>−70%</b><small>Production bugs after adding automated tests</small></div>
+        <div class="stat s3"><b>+65%</b><small>Usability gain on data-heavy features</small></div>
+        <div class="stat s4"><b>1.1</b><small>B.Sc. grade (German scale)</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow reveal">Experience</div>
+    <h2 class="reveal">Professional experience</h2>
+    <div class="timeline">
+      <div class="item card reveal">
+        <div class="item-head">
+          <div><h3>Software Engineer (Python / Angular)</h3><div class="org">Exadel · Tashkent, Uzbekistan</div></div>
+          <div class="when">06/2022 – 04/2024</div>
+        </div>
+        <ul>
+          <li>Developed a web-based reporting platform that lets insurance companies and financial institutions build regulatory and financial reports from ready-made building blocks.</li>
+          <li>Turned client business requirements into technical solutions by adapting core form designs into custom financial reports with spreadsheet-like formulas and calculations.</li>
+          <li>Automated report generation with <strong>Python/Django</strong> services on <strong>PostgreSQL</strong>, producing Excel and PDF documents and cutting manual work for business users.</li>
+          <li>Built data-heavy <strong>Angular (NgRx)</strong> features such as a virtual scroller for large datasets and financial report tables, <strong>improving usability by 65%</strong>.</li>
+          <li>Improved data quality and reliability with SonarQube analysis and fixes for validation, authorization and API errors. Wrote unit and end-to-end tests with Jest, <strong>reducing production bugs by 70%</strong>.</li>
+          <li>Worked with stakeholders in an international, cross-functional team of 15 people.</li>
+        </ul>
+        <div class="pill-row"><span class="pill">Python</span><span class="pill">Django</span><span class="pill">PostgreSQL</span><span class="pill">Angular</span><span class="pill">NgRx</span><span class="pill">Jest</span><span class="pill">SonarQube</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow reveal">Education</div>
+    <h2 class="reveal">Academic background</h2>
+    <div class="timeline">
+      <div class="item card reveal">
+        <div class="item-head">
+          <div><h3>M.Sc. Computer Science (Informatik)</h3><div class="org">Saarland University · Saarbrücken</div></div>
+          <div class="when">10/2024 – expected 01/2027</div>
+        </div>
+        <ul>
+          <li>All coursework completed. Thesis in progress: <strong>Delegated Classification</strong>, contract design for ML framed as a Stackelberg game.</li>
+          <li>Relevant courses: Machine Learning, Neural Networks, Machine Translation (NLP), Optimization Algorithms in ML, Cybersecurity in ML.</li>
+          <li>DAAD Scholarship holder (All Disciplines).</li>
+        </ul>
+      </div>
+      <div class="item card reveal">
+        <div class="item-head">
+          <div><h3>B.Sc. Computer Engineering</h3><div class="org">Tashkent University of Information Technologies</div></div>
+          <div class="when">2018 – 2022</div>
+        </div>
+        <ul>
+          <li>Grade: <strong>1.1</strong> (German grading scale). Thesis: Algorithms for preprocessing EMG biosignals.</li>
+          <li>Relevant courses: Data Structures and Algorithms, Machine Learning, Artificial Intelligence, Numerical Methods.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills</div>
+    <h2 class="reveal">What I work with</h2>
+    <div class="skills">
+      <div class="card skill reveal">
+        <h3><span class="ico" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></span>AI &amp; Data</h3>
+        <div class="tags"><span class="tag">Machine Learning</span><span class="tag">Neural Networks</span><span class="tag">NLP / Machine Translation</span><span class="tag">Reinforcement Learning</span><span class="tag">Data analysis</span><span class="tag">Data quality</span><span class="tag">PyTorch</span><span class="tag">NumPy</span><span class="tag">pandas</span></div>
+      </div>
+      <div class="card skill reveal">
+        <h3><span class="ico" style="background:linear-gradient(135deg,#db2777,#f472b6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>Programming &amp; Data</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span></div>
+      </div>
+      <div class="card skill reveal">
+        <h3><span class="ico" style="background:linear-gradient(135deg,#0d9488,#2dd4bf)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></span>Automation &amp; Tools</h3>
+        <div class="tags"><span class="tag">Django (ORM)</span><span class="tag">Angular (NgRx)</span><span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AWS</span><span class="tag">SonarQube</span><span class="tag">Jira</span></div>
+      </div>
+      <div class="card skill reveal">
+        <h3><span class="ico" style="background:linear-gradient(135deg,#ea580c,#fbbf24)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></span>Quality &amp; Testing</h3>
+        <div class="tags"><span class="tag">Unit testing (Jest)</span><span class="tag">End-to-end testing</span><span class="tag">Automated code analysis</span><span class="tag">Debugging</span></div>
+      </div>
+      <div class="card skill reveal">
+        <h3><span class="ico" style="background:linear-gradient(135deg,#2563eb,#60a5fa)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span>Office</h3>
+        <div class="tags"><span class="tag">Excel</span><span class="tag">Word</span><span class="tag">PowerPoint</span><span class="tag">Outlook</span></div>
+      </div>
+      <div class="card skill reveal">
+        <h3><span class="ico" style="background:linear-gradient(135deg,#c026d3,#7c3aed)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.4 0 4 1.6 4.5 4.5"/></svg></span>Soft skills</h3>
+        <div class="tags"><span class="tag">Stakeholder communication</span><span class="tag">Requirements analysis</span><span class="tag">Analytical problem-solving</span><span class="tag">Teamwork</span><span class="tag">Independent work</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow reveal">Projects</div>
+    <h2 class="reveal">Selected projects</h2>
+    <div class="projects">
+      <div class="card project reveal" style="--accent:#7c3aed">
+        <div class="big">95%<small>mean IoU</small></div>
+        <h3>Scribble-Based Image Segmentation</h3>
+        <p>Built and evaluated a machine learning prototype for foreground/background segmentation (80/20 split, early stopping), reaching 95% mean IoU on held-out data.</p>
+        <div class="pill-row"><span class="pill">Python</span><span class="pill">PyTorch</span></div>
+      </div>
+      <div class="card project reveal" style="--accent:#db2777">
+        <div class="big">92%<small>win / draw rate</small></div>
+        <h3>Q-Learning Tic-Tac-Toe Agent</h3>
+        <p>Implemented a self-learning reinforcement learning agent that wins or draws 92% of games.</p>
+        <div class="pill-row"><span class="pill">Python</span><span class="pill">Reinforcement Learning</span></div>
+      </div>
+      <div class="card project reveal" style="--accent:#0d9488">
+        <div class="big" style="font-size:1.6rem">Master's thesis</div>
+        <h3>Delegated Classification</h3>
+        <p>Models incentive contracts between a principal and an ML agent as a Stackelberg game and develops robust contracts for delegated ML.</p>
+        <div class="pill-row"><span class="pill">Game theory</span><span class="pill">ML</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="languages">
+  <div class="wrap">
+    <div class="eyebrow reveal">Languages &amp; awards</div>
+    <h2 class="reveal">Languages</h2>
+    <div class="langs">
+      <div class="card lang reveal"><b>Uzbek <span>Native</span></b><div class="bar"><i data-w="100%"></i></div></div>
+      <div class="card lang reveal"><b>English <span>C1 · fluent</span></b><div class="bar"><i data-w="90%"></i></div></div>
+      <div class="card lang reveal"><b>Russian <span>C1</span></b><div class="bar"><i data-w="90%"></i></div></div>
+      <div class="card lang reveal"><b>German <span>B1 · in progress</span></b><div class="bar"><i data-w="55%"></i></div></div>
+    </div>
+    <div class="card award reveal">
+      <span class="ico" style="background:linear-gradient(135deg,#ea580c,#fbbf24)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg></span>
+      <div><h3 style="font-size:1.1rem">DAAD Scholarship: All Disciplines</h3><p style="color:var(--muted)">German Academic Exchange Service · 2024</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="eyebrow" style="color:#fff;opacity:.85">Contact</div>
+      <h2>Let's work together</h2>
+      <p>I'm looking for a working student position in AI, automation or data. I can start immediately, work up to 20 hours a week and I'm open to relocation.</p>
+      <div class="btns">
+        <a class="btn" href="mailto:mekhrullaeva@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+        <a class="btn outline" href="https://www.linkedin.com/in/mavlyudabegimmekhrilloeva-4246ba1b1/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg>LinkedIn</a>
+        <a class="btn outline" href="https://github.com/Mavlyudabegim" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub</a>
+        <a class="btn outline" href="Mavlyudabegim_Mekhrilloeva_CV.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Mavlyudabegim Mekhrilloeva · Saarbrücken, Germany</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const bars = el => el.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.w);
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); bars(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => { el.classList.add('in'); bars(el); });
+  }
+</script>
+</body>
+</html>
