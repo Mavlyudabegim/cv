@@ -58,5 +58,9 @@ const d = project.data;
   .body :global(li) { margin-bottom: 6px; }
   .body :global(a) { color: var(--violet); }
   .body :global(img) { max-width: 100%; border-radius: 12px; }
+  .body :global(table) { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .93rem; display: block; overflow-x: auto; }
+  .body :global(th), .body :global(td) { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .body :global(th) { color: var(--text); font-weight: 700; background: color-mix(in srgb, var(--violet) 8%, transparent); }
+  .body :global(td) { color: var(--muted); }
   .body :global(pre) { padding: 16px; border-radius: 12px; overflow-x: auto; margin: 12px 0; }
 </style>

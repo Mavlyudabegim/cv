@@ -28,7 +28,8 @@ const accents: Record<string, string> = { violet: '#7c3aed', pink: '#db2777', te
 </section>
 
 <style>
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
   .project { position: relative; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform .25s; }
   .project:hover { transform: translateY(-4px); }
   .project::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--accent); }
