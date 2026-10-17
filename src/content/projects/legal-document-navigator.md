@@ -3,8 +3,8 @@ title: Legal Document Navigator
 summary: A RAG app that answers plain-language questions about contracts and cites the exact clause. Evaluated on ContractNLI (NDAs labelled by lawyers) with no task-specific training.
 order: 0
 color: blue
-metric: "85%"
-metricLabel: ContractNLI accuracy
+metric: "98.4%"
+metricLabel: answers cite the right clause
 tags: [Python, RAG, LLMs, Hybrid search, Streamlit, Supabase]
 repo: https://github.com/Mavlyudabegim/legal_document_navigator
 ---
@@ -22,6 +22,15 @@ Upload a contract (PDF), ask a question in plain language, and get a short answe
 - **Hybrid search**: embeddings (bge-small) for meaning plus BM25 for exact legal terms, merged with Reciprocal Rank Fusion.
 - **Grounded answers with verified citations**: the model may only use the retrieved clauses. Citations to clauses it was never given are removed, and if nothing relevant is found it says so instead of guessing.
 - **Storage and UI**: Supabase (Postgres + pgvector + Storage) with a local Chroma fallback, and a Streamlit interface where each browser gets its own private document list.
+
+## Highlights
+
+| Metric | Result |
+|---|---|
+| Yes/no answers whose citation contains the lawyers' evidence | **98.4%** |
+| Evidence found in the top-5 retrieved clauses (Hit@5) | **96.1%** |
+| Evidence sentences that the answer cited (citation recall) | **95.2%** |
+| Evidence covered by retrieval (evidence recall) | **94.0%** |
 
 ## Evaluation on ContractNLI
 
