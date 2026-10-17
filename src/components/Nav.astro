@@ -1,6 +1,8 @@
 ---
 import { url } from '../utils/url';
-import { profile } from '../data/cv';
+import { profile, articles } from '../data/cv';
+
+const hasArticles = articles.items.length > 0;
 
 interface Props { home?: boolean }
 const { home = false } = Astro.props;
@@ -13,6 +15,7 @@ const links = [
   ['Education', 'education'],
   ['Skills', 'skills'],
   ['Projects', 'projects'],
+  ...(hasArticles ? [['Articles', 'articles']] : []),
   ['Contact', 'contact'],
 ];
 ---

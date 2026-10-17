@@ -108,3 +108,19 @@ export const contact = {
   heading: "Let's work together",
   text: "I'm looking for a working student position in AI, automation or data. I can start immediately, work up to 20 hours a week and I'm open to relocation.",
 };
+
+// Articles section: cards that link to articles on Notion.
+// To add an article, copy one item and change its fields. The Notion page must be
+// published (Share → Publish) so visitors can open it without logging in.
+export const articles = {
+  heading: 'Articles',
+  intro: 'I write about machine learning, AI, trustworthy ML and reinforcement learning, explained in plain English.',
+  items: [
+    {
+      title: 'The “No Free Lunch” Theory: Why No ML Algorithm is Universally Best?',
+      summary: 'Why no single algorithm wins on every problem, explained with spam filtering and three models: a Decision Tree, an SVM and a Neural Network.',
+      tags: ['ML theory', 'Deep Learning Book'],
+      url: 'https://www.notion.so/3fb208081b7681c0b895f9128d114f73',
+    },
+  ],
+};
