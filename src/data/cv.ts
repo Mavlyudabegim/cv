@@ -109,18 +109,13 @@ export const contact = {
   text: "I'm looking for a working student position in AI, automation or data. I can start immediately, work up to 20 hours a week and I'm open to relocation.",
 };
 
-// Articles section: cards that link to articles on Notion.
-// To add an article, copy one item and change its fields. The Notion page must be
-// published (Share → Publish) so visitors can open it without logging in.
+// Articles section: a simple list of article titles linking to Notion (newest first).
+// To add an article, add a line with its title and public Notion link.
 export const articles = {
   heading: 'Articles',
   intro: 'I write about machine learning, AI, trustworthy ML and reinforcement learning, explained in plain English.',
   items: [
-    {
-      title: 'The “No Free Lunch” Theory: Why No ML Algorithm is Universally Best?',
-      summary: 'Why no single algorithm wins on every problem, explained with spam filtering and three models: a Decision Tree, an SVM and a Neural Network.',
-      tags: ['ML theory', 'Deep Learning Book'],
-      url: 'https://www.notion.so/3fb208081b7681c0b895f9128d114f73',
-    },
+    { title: 'The Central Limit Theorem', url: 'https://app.notion.com/p/mavlyudabegim/The-Central-Limit-Theorem-3fd208081b7681c39a2aeb205cba5248' },
+    { title: 'The “No Free Lunch” Theory: Why No ML Algorithm is Universally Best?', url: 'https://www.notion.so/3fb208081b7681c0b895f9128d114f73' },
   ],
 };
