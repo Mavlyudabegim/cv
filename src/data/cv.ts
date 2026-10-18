@@ -58,6 +58,19 @@ export const experience: TimelineItem[] = [
     ],
     tags: ['Python', 'Django', 'PostgreSQL', 'Angular', 'NgRx', 'Jest', 'SonarQube'],
   },
+  {
+    title: 'Software Engineering Intern (Node.js / Angular)',
+    org: 'EPAM Systems · Tashkent, Uzbekistan',
+    period: 'Internship · before Exadel',
+    points: [
+      'Worked on a <strong>litter-picking web application for the city of Tashkent</strong>, built to keep the city clean with the help of its residents.',
+      'Residents can <strong>report places with garbage</strong>, so these spots become visible to others.',
+      'Users can <strong>organise litter-picking events</strong> and <strong>find volunteers nearby</strong> to join them.',
+      'Built backend features with <strong>NestJS</strong> and <strong>Node.js</strong>, and frontend features with <strong>Angular</strong>.',
+      'Gained hands-on experience with a full-stack TypeScript project in a team, from requirements to working features.',
+    ],
+    tags: ['NestJS', 'Node.js', 'TypeScript', 'Angular'],
+  },
 ];
 
 export const education: TimelineItem[] = [
@@ -86,7 +99,7 @@ export const education: TimelineItem[] = [
 export const skills = [
   { group: 'AI & Data', icon: 'spark', color: 'violet', items: ['Machine Learning', 'Neural Networks', 'NLP / Machine Translation', 'Reinforcement Learning', 'Data analysis', 'Data quality', 'PyTorch', 'NumPy', 'pandas'] },
   { group: 'Programming & Data', icon: 'code', color: 'pink', items: ['Python', 'SQL', 'PostgreSQL', 'TypeScript', 'JavaScript'] },
-  { group: 'Automation & Tools', icon: 'wrench', color: 'teal', items: ['Django (ORM)', 'Angular (NgRx)', 'Git', 'Docker', 'Kubernetes', 'AWS', 'SonarQube', 'Jira'] },
+  { group: 'Automation & Tools', icon: 'wrench', color: 'teal', items: ['Django (ORM)', 'NestJS', 'Node.js', 'Angular (NgRx)', 'Git', 'Docker', 'Kubernetes', 'AWS', 'SonarQube', 'Jira'] },
   { group: 'Quality & Testing', icon: 'shield', color: 'amber', items: ['Unit testing (Jest)', 'End-to-end testing', 'Automated code analysis', 'Debugging'] },
   { group: 'Office', icon: 'table', color: 'blue', items: ['Excel', 'Word', 'PowerPoint', 'Outlook'] },
   { group: 'Soft skills', icon: 'people', color: 'violet', items: ['Stakeholder communication', 'Requirements analysis', 'Analytical problem-solving', 'Teamwork', 'Independent work'] },
