@@ -25,8 +25,11 @@ const d = project.data;
       <h1>{d.title}</h1>
       <p class="summary">{d.summary}</p>
       <div class="pill-row">{d.tags.map((t) => <span class="pill">{t}</span>)}</div>
-      {d.repo && (
-        <div class="btns"><a class="btn ghost" href={d.repo} target="_blank" rel="noopener"><Icon name="github" />View code</a></div>
+      {(d.repo || d.demo) && (
+        <div class="btns">
+          {d.demo && <a class="btn primary" href={d.demo} target="_blank" rel="noopener"><Icon name="external" />Live demo</a>}
+          {d.repo && <a class="btn ghost" href={d.repo} target="_blank" rel="noopener"><Icon name="github" />View code</a>}
+        </div>
       )}
     </header>
     <div class="card body">
@@ -52,12 +55,14 @@ const d = project.data;
   .body { margin-top: 20px; }
   .body :global(h2) { font-size: 1.3rem; margin: 26px 0 10px; }
   .body :global(h2:first-child) { margin-top: 0; }
+  .body :global(h3) { font-size: 1.08rem; margin: 18px 0 6px; }
+  .body :global(p) { margin: 8px 0; }
   .body :global(p), .body :global(li) { color: var(--muted); }
   .body :global(strong) { color: var(--text); }
   .body :global(ul), .body :global(ol) { margin: 8px 0 8px 22px; }
   .body :global(li) { margin-bottom: 6px; }
   .body :global(a) { color: var(--violet); }
-  .body :global(img) { max-width: 100%; border-radius: 12px; }
+  .body :global(img) { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #fff; margin: 8px 0; }
   .body :global(table) { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .93rem; display: block; overflow-x: auto; }
   .body :global(th), .body :global(td) { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
   .body :global(th) { color: var(--text); font-weight: 700; background: color-mix(in srgb, var(--violet) 8%, transparent); }

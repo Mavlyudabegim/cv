@@ -16,6 +16,7 @@ const projects = defineCollection({
     label: z.string().optional(),             // shown instead of a metric, e.g. "Master's thesis"
     tags: z.array(z.string()).default([]),
     repo: z.string().url().optional(),        // optional GitHub link for the project
+    demo: z.string().url().optional(),        // optional live demo link
   }),
 });
 
