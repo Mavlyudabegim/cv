@@ -66,7 +66,7 @@ export const education: TimelineItem[] = [
     org: 'Saarland University · Saarbrücken',
     period: '10/2024 – expected 01/2027',
     points: [
-      'All coursework completed. Thesis in progress: <strong>Delegated Classification</strong>, contract design for ML framed as a Stackelberg game.',
+      'All coursework completed. Thesis in progress: <strong>Robust Contracts for Delegated Classification</strong>, incentive contracts for outsourced ML training that stay reliable when the outcome distribution is uncertain.',
       'Relevant courses: Machine Learning, Neural Networks, Machine Translation (NLP), Optimization Algorithms in ML, Cybersecurity in ML.',
       'DAAD Scholarship holder (All Disciplines).',
     ],
