@@ -8,6 +8,8 @@ metricLabel: answers cite the right clause
 tags: [Python, RAG, LLMs, Hybrid search, Streamlit, Supabase]
 repo: https://github.com/Mavlyudabegim/legal_document_navigator
 demo: https://legaldocumentnavigator.streamlit.app/
+imageUrl: https://github.com/user-attachments/assets/e35dabd0-a994-4661-995a-4ac4bdea9a61
+imageAlt: Legal Document Navigator app with chat and highlighted PDF clause
 ---
 
 ## Overview

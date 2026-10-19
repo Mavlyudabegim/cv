@@ -1,6 +1,7 @@
 ---
 import { url } from '../utils/url';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
@@ -10,43 +11,72 @@ const accents: Record<string, string> = { violet: '#7c3aed', pink: '#db2777', te
   <div class="wrap">
     <div class="eyebrow reveal">Projects</div>
     <h2 class="reveal">Selected projects</h2>
-    <div class="grid">
-      {projects.map((p) => (
-        <div class="card project reveal" style={`--accent:${accents[p.data.color]}`}>
-          <div class:list={['big', { word: !p.data.metric }]}>
-            {p.data.metric ?? p.data.label}
-            {p.data.metric && <small>{p.data.metricLabel}</small>}
+    <div class="list">
+      {projects.map((p) => {
+        const d = p.data;
+        const alt = d.imageAlt ?? `${d.title} preview`;
+        const hasMedia = d.image || d.imageUrl || d.video;
+        return (
+          <div class:list={['card', 'project', 'reveal', { 'no-media': !hasMedia }]} style={`--accent:${accents[d.color]}`}>
+            <div class="info">
+              <div class:list={['big', { word: !d.metric }]}>
+                {d.metric ?? d.label}
+                {d.metric && <small>{d.metricLabel}</small>}
+              </div>
+              <h3>{d.title}</h3>
+              <p>{d.summary}</p>
+              <div class="pill-row">{d.tags.map((t) => <span class="pill">{t}</span>)}</div>
+              <div class="actions">
+                <a class="more" href={url(`/projects/${p.id}/`)}>Read more <Icon name="arrow" /></a>
+                {d.demo && <a class="demo" href={d.demo} target="_blank" rel="noopener">Open live <Icon name="external" /></a>}
+              </div>
+            </div>
+            {hasMedia && (
+              <div class:list={['media', d.imageFit]}>
+                {d.image ? (
+                  <Image src={d.image} alt={alt} widths={[480, 800, 1200]} sizes="(max-width: 860px) 100vw, 560px" loading="lazy" />
+                ) : d.video ? (
+                  <video src={d.video} autoplay muted loop playsinline preload="metadata" aria-label={alt}></video>
+                ) : (
+                  <img src={d.imageUrl} alt={alt} loading="lazy" />
+                )}
+              </div>
+            )}
           </div>
-          <h3>{p.data.title}</h3>
-          <p>{p.data.summary}</p>
-          <div class="pill-row">{p.data.tags.map((t) => <span class="pill">{t}</span>)}</div>
-          <div class="actions">
-            <a class="more" href={url(`/projects/${p.id}/`)}>Read more <Icon name="arrow" /></a>
-            {p.data.demo && <a class="demo" href={p.data.demo} target="_blank" rel="noopener">Open live <Icon name="external" /></a>}
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
 
 <style>
-  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
-  .project { position: relative; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform .25s; }
+  .list { display: flex; flex-direction: column; gap: 22px; }
+  .project { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px; align-items: center; padding: 30px; transition: transform .25s; }
+  .project.no-media { grid-template-columns: 1fr; }
   .project:hover { transform: translateY(-4px); }
   .project::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--accent); }
+  .info { display: flex; flex-direction: column; min-width: 0; }
   .big { font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; }
   .big.word { font-size: 1.6rem; }
   .big small { font-size: .85rem; font-weight: 600; color: var(--muted); margin-left: 6px; }
-  h3 { margin: 14px 0 8px; font-size: 1.1rem; }
-  p { color: var(--muted); font-size: .95rem; }
-  .actions { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .more { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: .9rem; color: var(--accent); text-decoration: none; }
+  h3 { margin: 14px 0 8px; font-size: 1.25rem; }
+  p { color: var(--muted); font-size: .97rem; }
+  .actions { padding-top: 18px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .more { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: .92rem; color: var(--accent); text-decoration: none; }
   .more::after { content: ""; position: absolute; inset: 0; }
+  .more :global(svg) { width: 16px; height: 16px; transition: transform .2s; }
+  .project:hover .more :global(svg) { transform: translateX(4px); }
   .demo { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; transition: filter .2s; }
   .demo:hover { filter: brightness(1.12); }
   .demo :global(svg) { width: 14px; height: 14px; }
-  .more :global(svg) { width: 16px; height: 16px; transition: transform .2s; }
-  .project:hover .more :global(svg) { transform: translateX(4px); }
+  .media { aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: color-mix(in srgb, var(--accent) 10%, white); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--accent) 45%, transparent); }
+  .media :global(img), .media video { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .5s; }
+  .media video { object-fit: contain; background: #111; }
+  .media.contain { background: #fff; padding: 10px; }
+  .media.contain :global(img) { object-fit: contain; object-position: center; }
+  .project:hover .media :global(img), .project:hover .media video { transform: scale(1.03); }
+  @media (max-width: 860px) {
+    .project { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
+    .media { order: -1; }
+  }
 </style>

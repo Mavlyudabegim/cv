@@ -8,6 +8,8 @@ metricLabel: optimal moves in all 4,520 positions
 tags: [Python, Reinforcement Learning, Q-learning, JavaScript]
 repo: https://github.com/Mavlyudabegim/tic_tac_toe
 demo: https://tictactoe-web-nu.vercel.app/
+image: ./tic-tac-toe/web-app.png
+imageAlt: Web app where you play against the Q-learning agent, with Q-values shown on each cell
 ---
 
 ## Overview

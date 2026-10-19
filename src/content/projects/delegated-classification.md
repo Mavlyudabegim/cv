@@ -5,6 +5,9 @@ order: 3
 color: teal
 label: Master's thesis
 tags: [Contract theory, Robust optimization, Hypothesis testing, Python, CVXPY]
+image: ./delegated-classification/preview.png
+imageAlt: Nominal step contract versus robust ramp contracts
+imageFit: contain
 ---
 
 ## Overview

@@ -8,6 +8,8 @@ metricLabel: fewer character errors after fine-tuning
 tags: [Python, Speech recognition, Whisper, Fine-tuning, ffmpeg, Streamlit]
 repo: https://github.com/Mavlyudabegim/video_subtitle
 demo: https://videosubtitle.streamlit.app/
+video: https://github.com/user-attachments/assets/7d3f9e90-1028-4406-bd4f-6901c129e76a
+imageAlt: Demo video of automatic Uzbek subtitles on a short video
 ---
 
 ## Overview
