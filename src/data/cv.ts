@@ -97,7 +97,7 @@ export const education: TimelineItem[] = [
 
 // `icon` must be a name from src/components/Icon.astro
 export const skills = [
-  { group: 'AI & Data', icon: 'spark', color: 'violet', items: ['Machine Learning', 'Neural Networks', 'NLP / Machine Translation', 'Reinforcement Learning', 'Data analysis', 'Data quality', 'PyTorch', 'NumPy', 'pandas'] },
+  { group: 'AI & Data', icon: 'spark', color: 'violet', items: ['Machine Learning', 'Neural Networks', 'NLP / Machine Translation', 'Reinforcement Learning', 'Speech recognition (ASR)', 'Data analysis', 'Data quality', 'PyTorch', 'NumPy', 'pandas'] },
   { group: 'Programming & Data', icon: 'code', color: 'pink', items: ['Python', 'SQL', 'PostgreSQL', 'TypeScript', 'JavaScript'] },
   { group: 'Automation & Tools', icon: 'wrench', color: 'teal', items: ['Django (ORM)', 'NestJS', 'Node.js', 'Angular (NgRx)', 'Git', 'Docker', 'Kubernetes', 'AWS', 'SonarQube', 'Jira'] },
   { group: 'Quality & Testing', icon: 'shield', color: 'amber', items: ['Unit testing (Jest)', 'End-to-end testing', 'Automated code analysis', 'Debugging'] },
